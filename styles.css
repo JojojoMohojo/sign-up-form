@@ -1,9 +1,33 @@
+@font-face {
+    font-family: 'arcon_regular';
+    src: url('fonts/arcon-regular-webfont.woff2') format('woff2'),
+         url('fonts/arcon-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'arcon_rounded';
+    src: url('fonts/arcon-rounded-webfont.woff2') format('woff2'),
+         url('fonts/arcon-rounded-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*RESET STYLESHEET*/
 @import "modern-normalize";
 
 :root {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: arcon_regular, Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  font-weight: 100;
+}
+
+* {
+    border: 1px solid red;
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul {
@@ -37,8 +61,4 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
-}
-
-body {
-    color: blue;
 }
