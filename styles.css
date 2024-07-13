@@ -4,7 +4,6 @@
          url('fonts/arcon-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -13,7 +12,14 @@
          url('fonts/arcon-rounded-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+  font-family: 'norsebold';
+  src: url('fonts/norsebold-webfont.woff2') format('woff2'),
+       url('fonts/norsebold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /*RESET STYLESHEET*/
@@ -54,11 +60,25 @@ input, textarea, select {
   margin: 0;
   box-sizing: border-box;
   width: 250px;
-  height: 1.8rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1.5px solid #E5E7EB;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+}
+
+input:focus {
+  outline:none;
+}
+
+input:invalid {
+  border-color: red;
+}
+
+input:focus {
+  border-color: blue !important;
 }
 
 html, body {
@@ -67,23 +87,70 @@ html, body {
   margin: 0;
   padding: 0;
   display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-
 
 .side-bar {
   width: 600px;
   background-image: url("./images/milada-vigerova-cat-unsplash.jpg");
   background-size: cover;
   background-position: bottom 0% right 25%;
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.logo {
+  height: 150px;
+  min-width: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 179px 0 0 0;
+  padding: 0 20px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.logo > img {
+  width: clamp(69px, 7.46vw, 97px);
+  opacity: 100%;
+  margin: 10px 0 10px 0;
+}
+
+.logo > p {
+  color: white;
+  font-size: clamp(64.4px, 7vw, 90px);
+  margin: 0px 0 0 0;
+  padding: 0;
+  font-family: "norsebold";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.credit > a {
+  text-decoration: underline;
+}
+
+.credit {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background: #595153;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 3px 5px;
+}
 
 .splash-text {
   max-width: 620px;
   font-size: 22px;
   font-weight: 1000;
-  padding: 130px 0px 50px 40px;
+  padding: 115px 0px 50px 40px;
 }
 
 .splash-text > div {
@@ -107,7 +174,7 @@ html, body {
 }
 
 .form-area {
-  padding: 15px 0 15px 40px;
+  padding: 15px 40px 15px 40px;
   font-size: 22px;
   font-weight: 1000;
 }
@@ -125,12 +192,19 @@ fieldset {
 }
 
 .form-row {
-  padding: 15px 15px 15px 0;
+  padding: 15px 0 15px 0;
   align-items: left;
 }
 
 label {
   display: block;
+}
+
+.message {
+  display: block;
+  font-size: 12px;
+  color: red;
+  position: absolute;
 }
 
 .footer {
@@ -145,9 +219,13 @@ button {
   color: white;
   font-size: 16px;
   border-radius: 8px;
-  background-color: rgb(66, 145, 22);
+  background-color: #96b333;
   border-style: none;
   box-shadow: 0px 2px 8px rgba(204, 204, 204);
+}
+
+button:active {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .log-in-text {
@@ -155,5 +233,5 @@ button {
 }
 
 .log-in-text > a {
-  color: rgb(66, 145, 22);
+  color: #96b333;
 }
