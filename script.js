@@ -56,13 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
             addErrorMessage(passwordB, 'invalid');
         }
 
-        if(!isValidPassword(passwordA.value)
-            ||!isValidPassword(passwordB.value)
-            ||!doPasswordsMatch(passwordA.value, passwordB.value)) {
+        if (isValidPassword(passwordA.value)||isValidPassword(passwordB.value)) {
+            if (!doPasswordsMatch(passwordA.value, passwordB.value)) {
             valid = false;
             addErrorMessage(passwordA, 'not-matching');
+            }
         }
-
         return valid;
     }
 
